@@ -51,10 +51,6 @@ npm install
 
 npm start
 
-### 📸 Screenshots
-![Home Page]([./screenshot/home.png](https://github.com/shalini2376/TheChefKart/blob/main/screenshot/home.png?raw=true))
-![Dish Modal](./screenshot/modal.png)
-
 ## 📂 Folder Structure
 
 src/
