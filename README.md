@@ -36,7 +36,6 @@ This project demonstrates skills in **state management, reusable components, fil
 - Hosted link: [TheChefKart-site] (https://thechefkart-foodpage.netlify.app)
 
 
-
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the repo
