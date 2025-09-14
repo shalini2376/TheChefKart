@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  font-family: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header { 
+    width: 100vw;
+    background: #FF9900; 
+    color: #fff; 
+}
+
+.navbar{
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 12px 16px;
+}
+
+.logo-img{
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+@media (max-width: 380px) {
+  .navbar{
+    padding: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Filter */
+
+.filter-wrapper{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.category-tab-container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input-container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+}
+.search-dishes-field{
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline-color: #FF9900;
+}
+.circle-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.circle-btn.active {
+  box-shadow: 0 0 0 3px rgba(252,128,25,0.2); /* orange glow */
+  border-color: #FC8019;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* dishlist */
+.dishlist-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+    margin-bottom: 52px;
+}
+
+@media (min-width: 768px) {
+  .dishlist-container {
+    grid-template-columns: repeat(2, 1fr); /* tablet */
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 1024px) {
+  .dishlist-container {
+    grid-template-columns: repeat(3, 1fr); /* desktop */
   }
+}
+@media (min-width: 1400px) {
+  .dishlist-container {
+    grid-template-columns: repeat(4, 1fr); /* large / xl */
+  }
+}
+
+/* dishcard */
+.dishcard-container{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 5px;
+}
+.dishcard-img{
+    width: 100%;
+    min-height: 200px;
+    max-height: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.dishcard-description-inner{
+    margin: 16px 0;
+}
+.dishcard-description h1{
+    margin: 0;
+}
+.dish-desc{
+    margin: 10px 0;
+    font-size: 17px;
+}
+.dish-icons{
+    width: 20px;
+}
+.add-remove-btn-container{
+    margin: 16px 0;
+    display: flex;
+    gap: 8px;
+}
+.add-remove-btn{
+    padding: 8px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #FF9900;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.veg-only-filter-container{
+    margin-left: auto;
+    font-size: 12px;
+}
+.ingredients-btn{
+    display: flex;
+    align-items: center;
+    border: 1px solid #FF9900;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: #FF9900;
+    border-radius: 5px;
+    margin-top: 4px;
+}
+.ingredients-icon{
+    height: 30px;
+}
+
+/* app footer */
+.app-footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    border-top: 1px solid #e6e6e6;
+    padding: 8px 16px;
+    margin-top: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+}
+.app-footer-inner{
+    width: 100%;
+    max-width: 1200px;
+    padding: 6px;
+}
+/* IngredientsModal */
+/* Modal overlay covers entire screen */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* very high to stay above everything */
+  color: #FF9900;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%; /* shrink on small screens */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Header with close button */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Description text */
+.modal-desc {
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Ingredients list */
+.ingredients-list {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 12px 0;
+}
+
+.ingredients-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Footer with action button */
+.modal-footer {
+  text-align: right;
+}
+
+.close-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #FF9900;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
