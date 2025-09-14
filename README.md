@@ -7,7 +7,7 @@ This project demonstrates skills in **state management, reusable components, fil
 
 ## ✨ Features
 
-- 📌 **Category Tabs** — Filter dishes by category (`STARTER`, `MAIN COURSE`, `DESSERT`, etc.).
+- 📌 **Category Tabs** — Filter dishes by category (`STARTER`, `MAIN COURSE`, `SIDES`, `DESSERT`, etc.).
 - 🔎 **Search Functionality** — Search dishes by name or description.
 - 🥗 **Veg / Non-Veg Filters** — Toggle between Veg and Non-Veg dishes.
 - ➕ **Add / Remove Dishes** — Select your favorite dishes with dynamic count.
@@ -21,7 +21,7 @@ This project demonstrates skills in **state management, reusable components, fil
 
 - **Frontend**: React.js (Functional Components + Hooks)
 - **Styling**: CSS3 (Flexbox, Grid, Media Queries)
-- **Deployment**: [Netlify](https://www.netlify.com/) (host link below 👇)
+- **Deployment**: Netlify
 
 ---
 
@@ -29,7 +29,7 @@ This project demonstrates skills in **state management, reusable components, fil
 
 ### 1️⃣ Clone the repo
 ```bash
-git clone https://github.com/your-username/food-ordering-app.git
+git clone https://github.com/shalini2376/food-ordering-app.git
 cd food-ordering-app
 
 2️⃣ Install dependencies
@@ -40,11 +40,24 @@ npm install
 
 npm start
 
-📸 Screenshots
+### 📸 Screenshots
+![Home Page](./screenshot/home.png)
+![Dish Modal](./screenshot/modal.png)
 
+## 📂 Folder Structure
 
-🔗 Live Demo
+src/
+├── components/
+│   ├── Header.js
+│   ├── Filters.js
+│   ├── DishList.js
+│   ├── DishCard.js
+│   └── IngredientModal.js
+├── data/
+│   └── mockDishes.js
+├── App.js
+└── App.css
 
-Hosted link: View on Netlify
+### 🌐 Live Demo
 
-* Inspired by real-world food ordering apps *# TheChefKart
+Hosted link: https://thechefkart-foodpage.netlify.app
