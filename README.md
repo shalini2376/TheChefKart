@@ -25,6 +25,18 @@ This project demonstrates skills in **state management, reusable components, fil
 
 ---
 
+## 📸 Screenshots
+![Home Page](./screenshot/home.png)
+![Dish Modal](./screenshot/modal.png)
+
+---
+
+## 🌐 Live Demo
+
+- Hosted link: [TheChefKart-site] (https://thechefkart-foodpage.netlify.app)
+
+
+
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the repo
@@ -58,6 +70,3 @@ src/
 ├── App.js
 └── App.css
 
-### 🌐 Live Demo
-
-Hosted link: https://thechefkart-foodpage.netlify.app
